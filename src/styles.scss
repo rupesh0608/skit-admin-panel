@@ -37,3 +37,8 @@ $skit-admin-panel-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+  font-family: "Roboto-bold";
+  src: local("Roboto-bold"), url(../src/assets/fonts/Roboto-Bold.ttf) format("truetype");
+}

@@ -1,13 +1,34 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
-import { AdminRoutes } from './admin.routing';
+import {MatButtonModule} from '@angular/material/button';
+import { LoginComponent } from './pages/login/login.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { AdminRoutingModule } from './admin.routingmodule';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutes
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    MatIconModule,
+    MatFormFieldModule,
+    BrowserModule,
+    FormsModule,
+  AdminRoutingModule
+    
   ],
-  declarations: [AdminComponent]
+  declarations: [AdminComponent,LoginComponent,DashboardComponent],
+  exports:[
+    AdminComponent
+  ]
+
 })
 export class AdminModule { }
