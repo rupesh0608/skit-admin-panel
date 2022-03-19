@@ -10,6 +10,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin.routingmodule';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
@@ -22,6 +24,8 @@ import { BrowserModule } from '@angular/platform-browser';
     MatFormFieldModule,
     BrowserModule,
     FormsModule,
+    MatToolbarModule,
+    MatSidenavModule,
   AdminRoutingModule
     
   ],
