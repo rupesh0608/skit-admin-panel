@@ -1,6 +1,32 @@
 <mat-drawer-container class="example-container">
   <mat-drawer #drawer [mode]="'side'">
-    <h1>sidenav</h1>
+    <div class="logo">
+      <img src="../../../../assets/dashboard_logo.png">
+    </div>
+    <mat-nav-list>
+      <div class="mt-6" style="height: 25px;"></div>
+      <a mat-list-item routerLink="users" routerLinkActive="list-item-active">
+        <mat-icon>supervisor_account</mat-icon>Users
+      </a>
+      <a mat-list-item routerLink="jobs" routerLinkActive="list-item-active">
+        <mat-icon>hourglass_full</mat-icon>Jobs
+      </a>
+      <a mat-list-item routerLink="courses" routerLinkActive="list-item-active">
+        <mat-icon>hourglass_full</mat-icon>Courses
+      </a>
+      <a mat-list-item routerLink="services" routerLinkActive="list-item-active">
+        <mat-icon>work_outline</mat-icon>Services
+      </a>
+      <a mat-list-item routerLink="verification" routerLinkActive="list-item-active">
+        <mat-icon>verified</mat-icon>Verification
+      </a>
+      <a mat-list-item routerLink="analytics" routerLinkActive="list-item-active">
+        <mat-icon>pie_chart</mat-icon>Analytics
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active">
+        <mat-icon>logout</mat-icon>Logout
+      </a>
+    </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>
     <!-- toolbar -->
@@ -8,13 +34,19 @@
       <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
+      <span>S-kit</span>
       <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button mat-button>
+        <img class="circle-image" width="50px" height="50px" src="../../../../assets/m1.jpeg">
+      </button>
     </mat-toolbar>
-
     <!-- content part -->
-
-    <div>
-      <h1>create table</h1>
+    
+    <div class="main w-100 h-100">
+      <router-outlet></router-outlet>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>

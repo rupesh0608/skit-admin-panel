@@ -2,22 +2,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { DashboardComponent } from './dashboard.component';
 
+import { VerificationComponent } from './verification.component';
 
-describe('DashboardComponent', () => {
-  let component: DashboardComponent;
-  let fixture: ComponentFixture<DashboardComponent>;
+describe('VerificationComponent', () => {
+  let component: VerificationComponent;
+  let fixture: ComponentFixture<VerificationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      declarations: [ VerificationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardComponent);
+    fixture = TestBed.createComponent(VerificationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
