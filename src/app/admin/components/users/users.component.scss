@@ -13,22 +13,25 @@ table {
 .t2{
   color:red;
 }
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  height: 10%;
-  width: 100%;
-  margin-top: 1%;
-  margin-left: 1%;
 
-}
-
-.example-full-width {
-  background-color: #d6d6d6;
-  width: 185%;
-  
-}
 .r1{
   background-color: #d6d6d6;
 }
-
+.circle-image{
+  border-radius: 50%!important;
+  margin: 10px;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: rgba(7, 45, 74,0.1);
+  background-clip: padding-box;
+  border-radius: .30rem;
+  // transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

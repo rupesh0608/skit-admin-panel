@@ -46,8 +46,6 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { ServicesComponent } from './components/services/services.component';
 import { VerificationComponent } from './components/verification/verification.component';
-
-
 @NgModule({
   imports: [
     CommonModule,

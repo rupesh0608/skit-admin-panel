@@ -11,7 +11,7 @@ import {MatInputModule} from '@angular/material/input';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements AfterViewInit {
-  displayedColumns: string[] = ['sno', 'profilepic', 'name', 'email','phone','Moredetail','Action'];
+  displayedColumns: string[] = ['Action1','sno', 'profilepic', 'name', 'email','phone','Moredetail','Action2'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   // @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -32,16 +32,10 @@ Action:string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {sno: 1, profilepic: 'image', name: 'shubham', email:'sg40303@gmail.com',phone:'7585786668',Moredetail:'ok',Action:'ok'},
-  {sno: 1, profilepic: 'image', name: 'shubham', email:'sg40303@gmail.com',phone:'7585786668',Moredetail:'ok',Action:'ok'},
-  {sno: 1, profilepic: 'image', name: 'shubham', email:'sg40303@gmail.com',phone:'7585786668',Moredetail:'ok',Action:'ok'},
-  {sno: 1, profilepic: 'image', name: 'shubham', email:'sg40303@gmail.com',phone:'7585786668',Moredetail:'ok',Action:'ok'},
-  {sno: 1, profilepic: 'image', name: 'shubham', email:'sg40303@gmail.com',phone:'7585786668',Moredetail:'ok',Action:'ok'},
+  {Action:'ok',sno: 1, profilepic: 'image', name: 'shubham', email:'sg40303@gmail.com',phone:'7585786668',Moredetail:'ok',},
+  {Action:'ok',sno: 1, profilepic: 'image', name: 'shubham', email:'sg40303@gmail.com',phone:'7585786668',Moredetail:'ok',},
+  {Action:'ok',sno: 1, profilepic: 'image', name: 'shubham', email:'sg40303@gmail.com',phone:'7585786668',Moredetail:'ok',},
+  {Action:'ok',sno: 1, profilepic: 'image', name: 'shubham', email:'sg40303@gmail.com',phone:'7585786668',Moredetail:'ok',},
+  {Action:'ok',sno: 1, profilepic: 'image', name: 'shubham', email:'sg40303@gmail.com',phone:'7585786668',Moredetail:'ok',},
   
 ];
-export class TableBasicExample {
-  displayedColumns: string[] = ['sno', 'profilepic', 'name', 'email','phone','Moredetail','Action'];
-  dataSource = ELEMENT_DATA;
-}
-
-export class InputHintExample {}
