@@ -7,7 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin.routingmodule';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -46,9 +46,11 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { ServicesComponent } from './components/services/services.component';
 import { VerificationComponent } from './components/verification/verification.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     MatButtonModule,
     MatCardModule,
     MatInputModule,
@@ -60,6 +62,7 @@ import { VerificationComponent } from './components/verification/verification.co
     MatSidenavModule,
     MatBadgeModule,
     MatBottomSheetModule,
+FormsModule,
     MatButtonToggleModule,
     MatCheckboxModule,
     MatChipsModule,
@@ -86,6 +89,7 @@ import { VerificationComponent } from './components/verification/verification.co
     MatTooltipModule,
     MatTreeModule,
     AdminRoutingModule,
+    MatAutocompleteModule
   ],
   declarations: [AdminComponent, LoginComponent,UsersComponent,DashboardComponent,AnalyticsComponent,CoursesComponent,JobsComponent,ServicesComponent,
     VerificationComponent
