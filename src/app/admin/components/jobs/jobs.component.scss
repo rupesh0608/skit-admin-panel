@@ -1,0 +1,243 @@
+button{
+    top:0.1px;
+    margin-right: 5rem;
+
+}
+.y1{
+    background-color: #14B8c4;
+    color: white;
+}
+.col{
+    margin-right: 8px;
+    font-size : 1 rem;
+}
+.p1
+{
+    padding:16px;
+}
+.p1>mat-card{
+    width:250px;
+}
+.button1{
+    background-color: #ff3333
+    ;
+    width:100px;
+
+}
+.button2{
+    background-color:  #00cc99
+    ;
+    width:100px;
+    
+}
+mat-grid-tile {
+    background: lightblue;
+    margin: 20px!important;
+  }
+
+
+//new css
+
+.cust-btn{
+    background-color: white;
+    width:185px;
+    height:63px;
+    border-radius: 39px;
+    align-items: flex-end;
+    .count{
+        background-color: rgba(52, 105, 146, 0.2);
+        height: 50px;
+        width: 50px;
+        margin-left: 10px;
+        margin-right:10px;
+        margin-top: 7px;
+        margin-bottom: 15px;
+        float: right;
+        border-radius: 50%;
+    }
+}
+
+.box-1{
+    background-color: white;
+    border: 0.5px solid grey;
+    width:100%;
+    margin-top:15px;
+    margin-left: 0px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    img{
+        border-radius: 10px;
+        height:58px;
+        width:58px;
+    }
+    .t1{
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .t2{
+        font-size: 14px;
+        font-weight: 500;
+        margin-left: 75px;
+        margin-top: -30px;
+    }
+    .t3{
+        font-size: 12px;
+        font-weight: 400;
+        margin-left: 75px;
+        margin-top: -25px;
+    }
+    .bottom-box{
+        background-color: #DAE4EB;
+        border-radius: 5px;
+    }
+    .bt-heading1{
+        font-size: 13px;
+        font-weight: 500;
+        margin-top:5px;
+        text-align: center;
+    }
+    .bt-heading2{
+        font-size: 12px;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+.box-2{
+    background-color: white;
+    border: 0.5px solid grey;
+    width:100%;
+    margin-top:15px;
+    margin-left: 0px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    img{
+        border-radius: 10px;
+        height:38px;
+        width:38px;
+    }
+    .t1{
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .t2{
+        font-size: 12px;
+        font-weight: 500;
+        margin-left: 55px;
+        margin-top: -30px;
+    }
+    .t3{
+        font-size: 11px;
+        font-weight: 400;
+        margin-left: 55px;
+        margin-top: -25px;
+    }
+    .bottom-box{
+        background-color: #DAE4EB;
+        border-radius: 5px;
+    }
+    .bt-heading1{
+        font-size: 12px;
+        font-weight: 500;
+        margin-top:5px;
+        text-align: center;
+    }
+    .bt-heading2{
+        font-size: 11px;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+.custm-col{
+    background-color: white;
+    border: .1px solid grey;
+    height:550px;
+    overflow: auto;
+}
+.mr-10{
+    margin-right: 10px;
+}
+.ml-10{
+    margin-left: 10px;
+}
+
+.example-form-field {
+    width: 100%;
+    height: 100%;
+  }
+
+  .box-3{
+    background-color: white;
+    border: 0.5px solid grey;
+    width:100%;
+    margin-top:15px;
+    margin-left: 0px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    img{
+        border-radius: 10px;
+        height:38px;
+        width:38px;
+    }
+    .t1{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .t2{
+        font-size: 11px;
+        font-weight: 500;
+        margin-left: 55px;
+        margin-top: -30px;
+    }
+    .t3{
+        font-size: 10px;
+        font-weight: 400;
+        margin-left: 55px;
+        margin-top: -25px;
+    }
+    .bottom-box{
+        background-color: #DAE4EB;
+        border-radius: 5px 5px 0px 0px;
+    }
+    .bottom-box-1-2{
+        background-color: rgba(228, 91, 91, .7);
+        border-radius: 0px 0px 0px 5px;
+        text-align: center;
+        color: white;
+        font-weight: 500;
+        padding: 5px;
+    }
+    .bottom-box-2-2{
+        background-color: rgba(72, 180, 159, .7);
+        border-radius: 0px 0px 5px 0px;
+        text-align: center;
+        color: white;
+        font-weight: 500;
+        padding: 5px;
+    }
+
+    .bt-heading1{
+        font-size: 10px;
+        font-weight: 500;
+        margin-top:5px;
+        text-align: center;
+    }
+    .bt-heading2{
+        font-size: 10px;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+.btn-sucess{
+    background-color: #3DB099!important;
+    color: white;
+}
+.btn-cancel{
+    background-color: #E35151!important;
+    color: white;
+}

@@ -13,7 +13,7 @@ import { LoginComponent } from './admin/pages/login/login.component';
 const approutes: Routes = [
   {
     path: 'admin', component: AdminComponent, children: [
-      { path: '', component: LoginComponent },
+      { path: 'login', component: LoginComponent },
       {
         path: 'dashboard', component: DashboardComponent, children: [
           { path: 'users', component: UsersComponent },
