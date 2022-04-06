@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdminserviceService } from '../../adminservice.service';
 
 @Component({
   selector: 'app-login',
@@ -7,11 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-   value:any=""
+  isLogedIn:any=false;
+  token:any=""
+  email:any=""
+  password:any=""
 
-  constructor() { }
+  constructor(private router: Router,private service: AdminserviceService,) { 
+    this.token=localStorage.getItem('LoginToken');
+    if(this.token !=null)
+    {
+      this.router.navigate(['/admin/dashboard']);
+    }
+  }
 
   ngOnInit() {
+  }
+
+  login(){
+    this.service.admin_login({"email":this.email,"password":this.password}).subscribe(res=>{
+       if(res.error==false && res.statusCode==200 && res.role.name=="ADMIN"){
+         this.token=res.token
+        localStorage.setItem('LoginToken',this.token);
+        this.router.navigate(['/admin/dashboard']);
+       }
+       else{
+         console.log("failed to login"+res.message)
+       }
+    })
   }
 
 }

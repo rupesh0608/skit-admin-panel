@@ -47,6 +47,7 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { ServicesComponent } from './components/services/services.component';
 import { VerificationComponent } from './components/verification/verification.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     CommonModule,
@@ -88,11 +89,14 @@ FormsModule,
     MatTabsModule,
     MatTooltipModule,
     MatTreeModule,
+    HttpClientModule,
     AdminRoutingModule,
     MatAutocompleteModule
   ],
   declarations: [AdminComponent, LoginComponent,UsersComponent,DashboardComponent,AnalyticsComponent,CoursesComponent,JobsComponent,ServicesComponent,
     VerificationComponent
+  ],providers:[
+    HttpClientModule
   ],
   exports: [
     AdminComponent, LoginComponent,UsersComponent,DashboardComponent,AnalyticsComponent,CoursesComponent,JobsComponent,ServicesComponent,

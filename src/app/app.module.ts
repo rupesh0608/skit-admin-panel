@@ -10,6 +10,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent
@@ -22,6 +23,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     FormsModule,
     MatCardModule,
     MatToolbarModule,
+    HttpClientModule
   
   ],
   providers: [],

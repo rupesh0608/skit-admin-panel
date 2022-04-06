@@ -13,9 +13,11 @@ import { LoginComponent } from './admin/pages/login/login.component';
 const approutes: Routes = [
   {
     path: 'admin', component: AdminComponent, children: [
+      {path: '', redirectTo: 'login', pathMatch: 'full'}, 
       { path: 'login', component: LoginComponent },
       {
         path: 'dashboard', component: DashboardComponent, children: [
+          { path: '', redirectTo: 'users', pathMatch: 'full'  },
           { path: 'users', component: UsersComponent },
           { path: 'jobs', component: JobsComponent },
           { path: 'courses', component: CoursesComponent },
