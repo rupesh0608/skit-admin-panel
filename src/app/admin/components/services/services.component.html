@@ -1,3 +1,94 @@
-<p>
-  services works!
-</p>
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="t1">account_circle</mat-icon>
+            All services
+    
+          </ng-template>
+    <div class="ser1">
+    <ul>
+        <li ><div class="s1">Service1<mat-slide-toggle>Slide me!</mat-slide-toggle>
+        </div><div class="s2"><mat-icon style="font-size: 100px;">account_circle</mat-icon></div>
+    <div>This is first service</div></li>
+    <li ><div class="s1">Service1<mat-slide-toggle>Slide me!</mat-slide-toggle>
+    </div><div class="s2"><mat-icon style="font-size: 100px;">account_circle</mat-icon></div>
+<div>This is first service</div></li>
+   
+<li ><div class="s1">Service1<mat-slide-toggle>Slide me!</mat-slide-toggle>
+</div><div class="s2"><mat-icon style="font-size: 100px;">account_circle</mat-icon></div>
+<div>This is first service</div></li>
+<li ><div class="s1">Service1<mat-slide-toggle>Slide me!</mat-slide-toggle>
+</div><div class="s2"><mat-icon style="font-size: 100px;">account_circle</mat-icon></div>
+<div>This is first service</div></li>
+<li ><div class="s1">Service1<mat-slide-toggle>Slide me!</mat-slide-toggle>
+</div><div class="s2"><mat-icon style="font-size: 100px;">account_circle</mat-icon></div>
+<div>This is first service</div></li>
+<li ><div class="s1">Service1<mat-slide-toggle>Slide me!</mat-slide-toggle>
+</div><div class="s2"><mat-icon style="font-size: 100px;">account_circle</mat-icon></div>
+<div>This is first service</div></li>
+
+       </ul>
+</div>
+</mat-tab>
+<mat-tab><ng-template mat-tab-label>
+    <mat-icon class="t1">account_circle</mat-icon>
+    Add services
+
+  </ng-template>
+  <mat-grid-list cols="2" rowHeight="1:1"  >
+    <mat-grid-tile style="width: 50px;">
+        <div class="s4" style="">
+            <div>  <mat-icon>file_upload</mat-icon></div>
+            <div class="s3">
+              
+              <mat-form-field class="w-200" appearance="outline">
+                  <mat-label>Service name</mat-label>
+                  <input matInput type="text" [(ngModel)]="value">
+                </mat-form-field>
+          
+                
+              </div>
+              <div class="s3">
+              
+                  <mat-form-field class="w-200" appearance="outline">
+                      <mat-label>website URL</mat-label>
+                      <input matInput type="text" [(ngModel)]="value">
+                    </mat-form-field>
+              
+                    
+                  </div>
+          
+                  <div class="s3">
+              
+                      <mat-form-field class="w-200" appearance="outline">
+                          <mat-label>Category</mat-label>
+                          <input matInput type="text" [(ngModel)]="value">
+                        </mat-form-field>
+                  
+                        
+                      </div>
+                      <div class="s3">
+              
+                          <mat-form-field class="w-200" appearance="outline">
+                              <mat-label>Service name</mat-label>
+                              <input matInput type="text" [(ngModel)]="value">
+                            </mat-form-field>
+                      
+                            
+                          </div>
+                      
+                      </div>
+                    </mat-grid-tile>
+    <mat-grid-tile> 
+       <div class="ser2"> <ul>
+        <li ><div class="s1">Service1<mat-slide-toggle>Slide me!</mat-slide-toggle>
+    </div><div class="s2"><mat-icon style="font-size: 100px;">account_circle</mat-icon></div>
+<div>This is first service</div></li>
+</ul></div>
+</mat-grid-tile>
+    
+  </mat-grid-list>
+  
+</mat-tab>
+
+</mat-tab-group>
