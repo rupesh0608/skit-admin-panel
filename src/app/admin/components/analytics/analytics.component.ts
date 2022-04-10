@@ -13,3 +13,4 @@ export class AnalyticsComponent implements OnInit {
   }
 
 }
+export class GridListOverviewExample {}

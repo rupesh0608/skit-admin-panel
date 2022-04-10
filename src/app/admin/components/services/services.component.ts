@@ -11,5 +11,6 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  value = 'Clear me';
 }
+export class GridListOverviewExample {}
