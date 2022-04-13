@@ -12,7 +12,8 @@ import { LoginComponent } from './pages/login/login.component';
 const routes: Routes = [
   { path: 'admin', component:AdminComponent,children:[
     {path:'',component:LoginComponent},
-    {path:'dashboard',redirectTo:'dashboard/users',component:DashboardComponent,children:[
+    {path:'dashboard',component:DashboardComponent,children:[
+      { path: '', component: UsersComponent },
       {path:'users',component:UsersComponent},
       {path:'jobs',component:JobsComponent},
       {path:'courses',component:CoursesComponent},
