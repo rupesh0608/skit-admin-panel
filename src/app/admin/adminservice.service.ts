@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AdminserviceService {
 
 
-  url:any="http://localhost:8080"
+  url:any="https://s-kit.herokuapp.com"
   https_requirements={
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

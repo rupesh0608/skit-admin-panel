@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   token:any=""
   email:any=""
   password:any=""
+  errorMsg:String=""
 
   constructor(private router: Router,private service: AdminserviceService,) { 
     this.token=localStorage.getItem('LoginToken');
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    this.errorMsg=""
     this.service.admin_login({"email":this.email,"password":this.password}).subscribe(res=>{
        if(res.error==false && res.statusCode==200 && res.role.name=="ADMIN"){
          this.token=res.token
@@ -33,7 +35,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/admin/dashboard']);
        }
        else{
-         console.log("failed to login"+res.message)
+         this.errorMsg=res.message
        }
     })
   }

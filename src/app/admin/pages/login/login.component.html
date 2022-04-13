@@ -20,6 +20,12 @@
   <div class="text-center">
     <button mat-raised-button color="primary" class="w-50" (click)="login()">Login</button>
   </div>
+  <div class="text-center" *ngIf="this.errorMsg!=''">
+    <div class="alert alert-danger mt-4">
+        {{this.errorMsg}}
+    </div>
+  </div>
+
 </mat-card>
 </div>
 
