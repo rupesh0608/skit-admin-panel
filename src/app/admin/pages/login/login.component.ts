@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   password:any=""
   errorMsg:String=""
 
-  constructor(private router: Router,private service: AdminserviceService,) { 
+  constructor(private router: Router,private service: AdminserviceService) { 
     this.token=localStorage.getItem('LoginToken');
     if(this.token !=null)
     {
