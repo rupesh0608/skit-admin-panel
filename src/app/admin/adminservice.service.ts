@@ -9,7 +9,7 @@ export class AdminserviceService {
 
 
   url:any="https://s-kit.herokuapp.com"
-  // url:any="https://192.168.29.243:8080"
+  // url:any="http://localhost:8080"
   job_url:any="https://govtjobsapi.herokuapp.com"
   https_requirements={
     headers: new HttpHeaders({
@@ -17,6 +17,16 @@ export class AdminserviceService {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': 'Content-Type',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+    })
+  }
+   token=localStorage.getItem('LoginToken');
+  https_requirements_with_token={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+      'Authorization':`Bearer ${this.token}`
     })
   }
    constructor(private http:HttpClient) { 
@@ -43,9 +53,20 @@ export class AdminserviceService {
   getTeachingJobs():Observable<any>{
     return this.http.get(this.job_url+'/freejobalert/teaching-jobs');
   }
-  
-  
 
+  // users component
 
+  getAllUsers(){
+    return this.http.get(this.url+'/api/admin/users/all',this.https_requirements_with_token);
+  }
+  blockUsers(val:any):Observable<any>{
+    return this.http.post<any>(this.url+'/api/admin/users/block',val,this.https_requirements);
+  }
+  unblockUsers(val:any):Observable<any>{
+    return this.http.post<any>(this.url+'/api/admin/users/unblock',val,this.https_requirements);
+  }
+  deleteUsers(val:any):Observable<any>{
+    return this.http.post<any>(this.url+'/api/admin/users/delete',val,this.https_requirements);
+  }
 
 }
