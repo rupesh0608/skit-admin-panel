@@ -1,24 +1,42 @@
-<div class="form-inline w-100" >
+<div class="form-inline w-100">
   <div class="col">
-    <div class="row">
-      <div class="cust-btn shadow m-3">
-        <div class="count">10</div>
-      </div>
-      <div class="cust-btn shadow m-3">
-        <div class="count">10</div>
-      </div>
-      <div class="cust-btn shadow m-3">
-        <div class="count">10</div>
-      </div>
-      <div class="cust-btn shadow m-3">
-        <div class="count ">10</div>
-      </div>
-    </div>
+    <mat-chip-list [selectable]="true">
+      <mat-chip class="border shadow" (click)="bankChipsClicked()">
+        <mat-chip-avatar>
+          {{this.bankjobsList.length}}
+        </mat-chip-avatar>
+        Bank Jobs
+      </mat-chip>
+      <mat-chip class="border shadow" (click)="engineeringChipsClicked()">
+        <mat-chip-avatar>
+          {{this.engineeringjobsList.length}}
+        </mat-chip-avatar>
+        Engineering Jobs
+      </mat-chip>
+      <mat-chip class="border shadow" (click)="defenceChipsClicked()">
+        <mat-chip-avatar>
+          {{this.defencejobsList.length}}
+        </mat-chip-avatar>
+        Defence Jobs
+      </mat-chip>
+      <mat-chip class="border shadow" (click)="railwayChipsClicked()">
+        <mat-chip-avatar>
+          {{this.railwayjobsList.length}}
+        </mat-chip-avatar>
+        Railway Jobs
+      </mat-chip>
+      <mat-chip class="border shadow" (click)="teachingChipsClicked()">
+        <mat-chip-avatar>
+          {{this.teachingjobsList.length}}
+        </mat-chip-avatar>
+        Teaching Jobs
+      </mat-chip>
+    </mat-chip-list>
   </div>
 
 
   <div class="col-sm-3 text-right">
-    <button mat-raised-button class="y1">Fetch Jobs</button>
+    <button mat-raised-button class="y1" (click)="fetchJobs()">Fetch Jobs</button>
   </div>
 
 </div>
@@ -27,91 +45,106 @@
 
 <div class="form-inline mt-5">
   <div class="col-sm-4 custm-col">
-    <div class="row box-1" *ngFor='let student of [0,1,2,3,4,5,6,7,8,9,10];'>
-      <div class="form-inline p-2">
-        <img src="../../../../assets/im1.png">
-        <h1 class="mx-2 t1">Asst. General Manager,Asst Manager & Others-27Posts</h1>
+    <div class="row box-1" *ngFor='let item of joblist; let i=index;'
+      (click)="formItem==''?sendDataToForm(item):revertFormData();sendDataToForm(item)">
+      <div class="w-100" *ngIf="item.type.trim()!=''">
+        <div class="type w-25 p-1">{{item.type.trim()}}</div>
       </div>
-      <div>
-        <h2 class=" t2">RRc Guwahati</h2>
-        <h2 class=" t3">10+2, Diploma, B.Ed, PG(Relevant Disciplines)</h2>
+      
+      <div class="form-inline p-2 w-100">
+        <img src="../../../../assets/skit_jobs.png">
+        <h1 class="mx-2 t1 w-75 ">{{item.postName.trim()}}</h1>
+      </div>
+      <div class="w-100">
+        <h2 class=" t2">{{item.postBoard.trim()}}</h2>
+        <h2 class=" t3">{{item.qualification.trim()}}</h2>
       </div>
       <div class="form-inline bottom-box w-100">
         <div class="col">
           <p class="bt-heading1">Post Date</p>
-          <p class="bt-heading2"> 12/3/20022</p>
+          <p class="bt-heading2">{{item.postDate.trim()}}</p>
         </div>
         <div class="col">
           <p class="bt-heading1">Last Date</p>
-          <p class="bt-heading2"> 12/3/20022</p>
+          <p class="bt-heading2">{{item.lastDate.trim()}}</p>
         </div>
         <div class="col">
           <p class="bt-heading1">Notification Link</p>
-          <p class="bt-heading2"> Click Here</p>
+          <p class="bt-heading2"><a href="{{item.link.trim()}}" target="_blank"> Click Here</a></p>
         </div>
       </div>
     </div>
   </div>
   <div class="col-sm-4 custm-col">
     <div class="row box-2">
-      <div class="form-inline p-2">
-        <img src="../../../../assets/im1.png">
-        <h1 class="mx-2 t1">Asst. General Manager,Asst Manager & Others-27Posts</h1>
+      <div class="w-100" *ngIf="m_type.trim()!=''">
+        <div class="type w-25 p-1">{{m_type.trim()}}</div>
       </div>
-      <div>
-        <h2 class=" t2">RRc Guwahati</h2>
-        <h2 class=" t3">10+2, Diploma, B.Ed, PG(Relevant Disciplines)</h2>
+      <div class="form-inline px-2 py-1 w-100">
+        <img src="../../../../assets/skit_jobs.png">
+        <h1 class="mx-2 t1 w-75">{{m_postName.trim()}}</h1>
+      </div>
+      <div class="w-100">
+        <h2 class=" t2">{{m_postBoard.trim()}}</h2>
+        <h2 class=" t3">{{m_qualifications.trim()}}</h2>
       </div>
       <div class="form-inline bottom-box w-100">
-        <div class="col">
+        <div class="col" *ngIf="m_postDate.trim()">
           <p class="bt-heading1">Post Date</p>
-          <p class="bt-heading2"> 12/3/20022</p>
+          <p class="bt-heading2">{{m_postDate.trim()}}</p>
         </div>
-        <div class="col">
+        <div class="col" *ngIf="m_lastDate!=''">
           <p class="bt-heading1">Last Date</p>
-          <p class="bt-heading2"> 12/3/20022</p>
+          <p class="bt-heading2">{{m_lastDate.trim()}}</p>
         </div>
-        <div class="col">
+        <div class="col" *ngIf="m_link!=''">
           <p class="bt-heading1">Notification Link</p>
-          <p class="bt-heading2"> Click Here</p>
+          <p class="bt-heading2"><a href="{{m_link.trim()}}" target="_blank">Click Here</a></p>
         </div>
       </div>
     </div>
     <div>
       <mat-form-field class="example-form-field" appearance="fill">
         <mat-label>Post Name</mat-label>
-        <input matInput type="text" [(ngModel)]="value">
+        <input matInput type="text" [(ngModel)]="m_postName">
       </mat-form-field>
       <mat-form-field class="example-form-field" appearance="fill">
         <mat-label>Board Name</mat-label>
-        <input matInput type="text" [(ngModel)]="value">
+        <input matInput type="text" [(ngModel)]="m_postBoard">
       </mat-form-field>
       <mat-form-field class="example-form-field" appearance="fill">
-        <mat-label>Match Category</mat-label>
-        <input matInput type="text" [(ngModel)]="value">
+        <mat-label>Qualifications</mat-label>
+        <input matInput type="text" [(ngModel)]="m_qualifications">
       </mat-form-field>
-      
+      <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Link</mat-label>
+        <input matInput type="text" [(ngModel)]="m_link">
+      </mat-form-field>
+
       <div class="row px-3">
 
         <mat-form-field class="w-50" appearance="fill">
           <mat-label>Post Date</mat-label>
-          <input matInput type="text" [(ngModel)]="value">
+          <input matInput type="text" [(ngModel)]="m_postDate">
         </mat-form-field>
 
         <mat-form-field class="w-50" appearance="fill">
           <mat-label>Last Date</mat-label>
-          <input matInput type="text" [(ngModel)]="value">
+          <input matInput type="text" [(ngModel)]="m_lastDate">
         </mat-form-field>
       </div>
-      <button mat-raised-button class="btn-cancel">Cancel</button>
+      <button mat-raised-button class="btn-cancel" (click)="revertFormData()">Cancel</button>
       <button mat-raised-button class="btn-sucess">Submit</button>
     </div>
   </div>
   <div class="col-sm-4 custm-col">
     <div class="row box-3" *ngFor='let student of [0,1,2,3,4,5,6,7,8,9,10];'>
+      <div class="w-100" *ngIf="m_type.trim()==''">
+        <div class="type w-25">{{m_type.trim()}}</div>
+      </div>
       <div class="form-inline p-2">
-        <img src="../../../../assets/im1.png">
-        <h1 class="mx-2 t1">Asst. General Manager,Asst Manager & Others-27Posts</h1>
+        <img src="../../../../assets/skit_jobs.png">
+        <h1 class="mx-2 t1 w-75">Asst. General Manager,Asst Manager & Others-27Posts</h1>
       </div>
       <div>
         <h2 class=" t2">RRc Guwahati</h2>

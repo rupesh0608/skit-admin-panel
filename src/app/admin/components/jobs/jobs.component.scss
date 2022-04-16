@@ -41,23 +41,37 @@ mat-grid-tile {
 .cust-btn{
     background-color: white;
     width:185px;
-    height:63px;
+    max-height:63px;
+    padding-left: 20px;
+    font-weight: 500;
     border-radius: 39px;
-    align-items: flex-end;
+    p{
+        margin-top: 15px;
+    }
     .count{
         background-color: rgba(52, 105, 146, 0.2);
-        height: 50px;
-        width: 50px;
-        margin-left: 10px;
-        margin-right:10px;
+        height: 45px;
+        width: 45px;
+        margin-left: 40px;
         margin-top: 7px;
-        margin-bottom: 15px;
+        margin-right: 0px;
         float: right;
         border-radius: 50%;
+        margin-bottom: 5px;
         position: center;
+        span{
+            margin-top: 40px !important;
+            margin-left: 15px;
+        }
+    }
+    
+}
+mat-chip{
+    background-color: white!important;
+    mat-chip-avatar{
+        background-color: rgba(52, 105, 146, 0.2);
     }
 }
-
 .box-1{
     background-color: white;
     border: 0.5px solid grey;
@@ -67,14 +81,24 @@ mat-grid-tile {
     margin-bottom: 15px;
     margin-right: 15px;
     border-radius: 5px;
+    .type{
+        background-color:darkcyan;
+        border-radius: 0px 5px 0px 5px;
+        color: white;
+        text-align: center;
+        float: right;
+    }
     img{
         border-radius: 10px;
         height:58px;
         width:58px;
+        float: left;
     }
     .t1{
         font-size: 15px;
         font-weight: 500;
+        float: right;
+        line-height: 20px;
     }
     .t2{
         font-size: 14px;
@@ -114,20 +138,29 @@ mat-grid-tile {
     margin-bottom: 15px;
     margin-right: 15px;
     border-radius: 5px;
+    .type{
+        background-color:darkcyan;
+        border-radius: 0px 5px 0px 5px;
+        color: white;
+        text-align: center;
+        float: right;
+    }
     img{
         border-radius: 10px;
         height:38px;
         width:38px;
+        float: left;
     }
     .t1{
         font-size: 13px;
         font-weight: 500;
+        float: right;
+        line-height: 15px;
     }
     .t2{
         font-size: 12px;
         font-weight: 500;
         margin-left: 55px;
-        margin-top: -30px;
     }
     .t3{
         font-size: 11px;
@@ -179,14 +212,24 @@ mat-grid-tile {
     margin-bottom: 15px;
     margin-right: 15px;
     border-radius: 5px;
+    .type{
+        background-color:darkcyan;
+        border-radius: 0px 5px 0px 5px;
+        color: white;
+        text-align: center;
+        float: right;
+    }
     img{
         border-radius: 10px;
         height:38px;
         width:38px;
+        float: left;
     }
     .t1{
         font-size: 12px;
         font-weight: 500;
+        float: right;
+        line-height: 15px;
     }
     .t2{
         font-size: 11px;
