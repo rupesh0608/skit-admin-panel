@@ -32,10 +32,10 @@ export class UsersComponent implements AfterViewInit {
   }
 
   getAllUsers() {
-    this.dataSource1=new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-    this.dataSource2=new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-    this.verifiedUsers=[]
-    this.blockedUsers=[]
+    this.dataSource1 = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+    this.dataSource2 = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+    this.verifiedUsers = []
+    this.blockedUsers = []
     this.service.getAllUsers().subscribe((res: any) => {
       if (!res.error) {
         res.verifiedUsers.map((o: any, i: any) => {
@@ -64,8 +64,8 @@ export class UsersComponent implements AfterViewInit {
           }
           this.blockedUsers.push(obj)
         })
-        this.dataSource1 =new MatTableDataSource<PeriodicElement>(this.verifiedUsers);
-        this.dataSource2 =new MatTableDataSource<PeriodicElement>(this.blockedUsers);
+        this.dataSource1 = new MatTableDataSource<PeriodicElement>(this.verifiedUsers);
+        this.dataSource2 = new MatTableDataSource<PeriodicElement>(this.blockedUsers);
       }
     })
   }
@@ -101,7 +101,9 @@ export class UsersComponent implements AfterViewInit {
         Swal.fire({
           icon: 'success',
           text: res.message,
-          confirmButtonText: 'ok'
+          confirmButtonText: 'ok',
+          allowOutsideClick: false,
+          allowEscapeKey: false
         }).then((result) => {
           if (result.isConfirmed) {
             this.getAllUsers()
@@ -112,6 +114,8 @@ export class UsersComponent implements AfterViewInit {
           icon: 'error',
           title: 'Something Went wrong...',
           text: res.message,
+          allowOutsideClick: false,
+          allowEscapeKey: false
         })
       }
     })
@@ -129,7 +133,9 @@ export class UsersComponent implements AfterViewInit {
         Swal.fire({
           icon: 'success',
           text: res.message,
-          confirmButtonText: 'ok'
+          confirmButtonText: 'ok',
+          allowOutsideClick: false,
+          allowEscapeKey: false
         }).then((result) => {
           if (result.isConfirmed) {
             this.getAllUsers()
@@ -140,6 +146,8 @@ export class UsersComponent implements AfterViewInit {
           icon: 'error',
           title: 'Something Went Wrong...',
           text: res.message,
+          allowOutsideClick: false,
+          allowEscapeKey: false
         })
       }
     })
@@ -173,28 +181,28 @@ export class UsersComponent implements AfterViewInit {
   // }
 
 
-  verifiedUsersFilter(value:any){
-    let searchedText=value.target.value
-     let data= this.verifiedUsers.filter((o:any,i:any)=>{
+  verifiedUsersFilter(value: any) {
+    let searchedText = value.target.value
+    let data = this.verifiedUsers.filter((o: any, i: any) => {
 
-      if(o.name.toLowerCase().includes(searchedText.toLowerCase()) ||
-       o.email.toLowerCase().includes(searchedText.toLowerCase()) ||
+      if (o.name.toLowerCase().includes(searchedText.toLowerCase()) ||
+        o.email.toLowerCase().includes(searchedText.toLowerCase()) ||
         o.phone.toLowerCase().includes(searchedText.toLowerCase()))
-      return o
+        return o
     })
-    this.dataSource1=new MatTableDataSource<PeriodicElement>(data);
+    this.dataSource1 = new MatTableDataSource<PeriodicElement>(data);
 
   }
-  blockedUsersFilter(value:any){
-    let searchedText=value.target.value
-     let data= this.blockedUsers.filter((o:any,i:any)=>{
+  blockedUsersFilter(value: any) {
+    let searchedText = value.target.value
+    let data = this.blockedUsers.filter((o: any, i: any) => {
 
-      if(o.name.toLowerCase().includes(searchedText.toLowerCase()) ||
-       o.email.toLowerCase().includes(searchedText.toLowerCase()) ||
+      if (o.name.toLowerCase().includes(searchedText.toLowerCase()) ||
+        o.email.toLowerCase().includes(searchedText.toLowerCase()) ||
         o.phone.toLowerCase().includes(searchedText.toLowerCase()))
-      return o
+        return o
     })
-    this.dataSource2=new MatTableDataSource<PeriodicElement>(data);
+    this.dataSource2 = new MatTableDataSource<PeriodicElement>(data);
 
   }
 

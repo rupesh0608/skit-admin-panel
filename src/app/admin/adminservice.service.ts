@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class AdminserviceService {
 
 
-  url:any="https://s-kit.herokuapp.com"
-  // url:any="http://localhost:8080"
+  // url:any="https://s-kit.herokuapp.com"
+  url:any="http://localhost:8080"
   job_url:any="https://govtjobsapi.herokuapp.com"
   https_requirements={
     headers: new HttpHeaders({
@@ -68,5 +68,26 @@ export class AdminserviceService {
   deleteUsers(val:any):Observable<any>{
     return this.http.post<any>(this.url+'/api/admin/users/delete',val,this.https_requirements);
   }
+
+  //jobs component
+  getAllJobs():Observable<any>{
+    return this.http.get<any>(this.url+'/api/admin/jobs/all',this.https_requirements);
+  }
+  submitJob(val:any):Observable<any>{
+    return this.http.post<any>(this.url+'/api/admin/jobs/save',val,this.https_requirements);
+  }
+  updateJob(val:any):Observable<any>{
+    return this.http.post<any>(this.url+'/api/admin/jobs/update',val,this.https_requirements);
+  }
+  publishJob(val:any):Observable<any>{
+    return this.http.post<any>(this.url+'/api/admin/jobs/publish',val,this.https_requirements);
+  }
+  unPublishJob(val:any):Observable<any>{
+    return this.http.post<any>(this.url+'/api/admin/jobs/unpublish',val,this.https_requirements);
+  }
+  deleteJob(val:any):Observable<any>{
+    return this.http.post<any>(this.url+'/api/admin/jobs/delete',val,this.https_requirements);
+  }
+
 
 }

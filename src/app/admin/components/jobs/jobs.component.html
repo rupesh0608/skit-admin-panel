@@ -74,6 +74,11 @@
         </div>
       </div>
     </div>
+
+    <div class="text-center" style="margin-top:25% ; margin-bottom: auto;" *ngIf="joblist.length==0">
+      <img src="../../../../assets/job.png" style="height:200px;">
+      <h3><i>Once the jobslist will be available, it will be shown here...</i></h3>
+    </div>
   </div>
   <div class="col-sm-4 custm-col">
     <div class="row box-2">
@@ -134,43 +139,46 @@
         </mat-form-field>
       </div>
       <button mat-raised-button class="btn-cancel" (click)="revertFormData()">Cancel</button>
-      <button mat-raised-button class="btn-sucess">Submit</button>
+      <button mat-raised-button class="btn-sucess" (click)="submitJob()">Submit</button>
     </div>
   </div>
   <div class="col-sm-4 custm-col">
-    <div class="row box-3" *ngFor='let student of [0,1,2,3,4,5,6,7,8,9,10];'>
-      <div class="w-100" *ngIf="m_type.trim()==''">
-        <div class="type w-25">{{m_type.trim()}}</div>
+    <div class="row box-3" *ngFor='let item of finalJobList;'>
+      <div class="w-100" >
+        <div class="type w-25 p-1">{{item.category}}</div>
       </div>
-      <div class="form-inline p-2">
+      <div class="form-inline p-2 w-100">
         <img src="../../../../assets/skit_jobs.png">
-        <h1 class="mx-2 t1 w-75">Asst. General Manager,Asst Manager & Others-27Posts</h1>
+        <h1 class="mx-2 t1 w-75">{{item.postName.trim()}}</h1>
       </div>
-      <div>
-        <h2 class=" t2">RRc Guwahati</h2>
-        <h2 class=" t3">10+2, Diploma, B.Ed, PG(Relevant Disciplines)</h2>
+      <div class="w-100">
+        <h2 class=" t2">{{item.boardName.trim()}}</h2>
+        <h2 class=" t3">{{item.qualifications.trim()}}</h2>
       </div>
       <div class="form-inline bottom-box w-100">
         <div class="col">
           <p class="bt-heading1">Post Date
-            <span class="bt-heading2"> 12/3/20022</span>
+            <span class="bt-heading2">{{item.postDate.trim()}}</span>
           </p>
         </div>
         <div class="col">
-          <p class="bt-heading1">Last Date <span class="bt-heading2"> 12/3/20022</span></p>
+          <p class="bt-heading1">Last Date <span class="bt-heading2">{{item.lastDate.trim()}}</span></p>
 
         </div>
         <div class="col">
-          <p class="bt-heading1">Notification Link <span class="bt-heading2"> Click Here</span></p>
+          <p class="bt-heading1">Notification Link <span class="bt-heading2"> <a href="{{item.link.trim()}}" target="_blank">Click Here</a></span></p>
 
         </div>
       </div>
       <div class="form-inline w-100">
-        <div class="w-50 bottom-box-1-2">
+        <div class="w-50 bottom-box-1-2" (click)="editJob(item)">
           Edit
         </div>
-        <div class="w-50 bottom-box-2-2">
+        <div class="w-50 bottom-box-2-2" *ngIf="item.status=='draft'"(click)="publishJob(item)">
           Publish
+        </div>
+        <div class="w-50 bottom-box-2-2" style="background-color:lightblue;" *ngIf="item.status=='published'" (click)="unPublishJob(item)">
+          UnPublish
         </div>
       </div>
     </div>
