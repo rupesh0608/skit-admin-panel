@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent
@@ -30,6 +31,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatMenuModule,
     MatButtonModule,
+    MatDialogModule
   
   ],
   providers: [],

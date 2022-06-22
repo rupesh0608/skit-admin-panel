@@ -4,7 +4,7 @@
     <div class="form-inline border px-2 pt-2 pb-2" style="background-color:#06475f;color:#fff;">
       <p class="pt-2 w-75" style="font-size:20px;">Modules</p>
       <div class="w-25" style="float:right;">
-        <button mat-icon-button style="float:right;margin-right: 5px;">
+        <button mat-icon-button style="float:right;margin-right: 5px;" (click)="openAddModuleDialog()">
           <mat-icon>add</mat-icon>
         </button>
         <button mat-icon-button style="float:right;margin-right: 5px;" mat-icon-button [matMenuTriggerFor]="filterMenu">
@@ -50,7 +50,7 @@
     <div class="form-inline border px-2 pt-2 pb-2" style="background-color:#06475f;color:#fff;">
       <p class="pt-2 w-75" style="font-size:20px;">Services</p>
       <div class="w-25" style="float:right;">
-        <button mat-icon-button style="float:right;margin-right: 5px;">
+        <button mat-icon-button style="float:right;margin-right: 5px;" (click)="openAddServiceDialog()">
           <mat-icon>add</mat-icon>
         </button>
         <button mat-icon-button style="float:right;margin-right: 5px;" mat-icon-button [matMenuTriggerFor]="filterMenu">

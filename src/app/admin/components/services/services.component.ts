@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { AdminserviceService } from '../../adminservice.service';
+import { AddServiceDialogComponent } from '../../Dialogs/AddServiceDialog/AddServiceDialog.component';
 
 @Component({
   selector: 'app-services',
@@ -19,9 +21,10 @@ export class ServicesComponent implements OnInit {
    category:any
    serviceList:any=[]
    tabNo:number
-  constructor(private router: Router, private service: AdminserviceService) {
+  constructor(private router: Router, private service: AdminserviceService,private dialog:MatDialog) {
     this.tabNo=0
     this.getAllServices()
+    
    }
   ngOnInit() {
   }
@@ -141,5 +144,32 @@ export class ServicesComponent implements OnInit {
     this.category=item.category
     this.link=item.link
     this.tabNo=1
+  }
+
+
+
+
+  //////////////////////////////////////////////////////////////////////////
+  openAddModuleDialog(){
+    const dialogRef = this.dialog.open(AddServiceDialogComponent, {
+      width: '250px',
+      data: {name: this.name, title: "Module"},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed'+result);
+     
+    });
+  }
+  openAddServiceDialog(){
+    const dialogRef = this.dialog.open(AddServiceDialogComponent, {
+      width: '250px',
+      data: {name: this.name, title: "Service"},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed'+result);
+     
+    });
   }
 }

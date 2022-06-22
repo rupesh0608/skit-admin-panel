@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Add {{data.title}}</h1>
+<div mat-dialog-content>
+      <img id="pic" src="../../../../assets/im1.png" width="100%" height="150px" style="border-radius: 10px;" class="border-1 mb-2" (click)="isImageSelected==false?logo.click():''">
+      <input type="file" #logo oninput="pic.src=window.URL.createObjectURL(this.files[0])" hidden >
+      <mat-form-field appearance="outline">
+        <mat-label>Enter {{data.title}} Name</mat-label>
+        <input matInput [(ngModel)]="data.name">
+      </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button (click)="onNoClick()" color="warn">Cancel</button>
+  <button mat-flat-button   (click)="AddService(data.title)" cdkFocusInitial color="primary">Add {{data.title}}</button>
+</div>

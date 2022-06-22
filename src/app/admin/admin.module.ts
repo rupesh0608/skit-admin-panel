@@ -48,6 +48,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { VerificationComponent } from './components/verification/verification.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { HttpClientModule } from '@angular/common/http';
+import { AddServiceDialogComponent } from './Dialogs/AddServiceDialog/AddServiceDialog.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -95,13 +96,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatAutocompleteModule
   ],
   declarations: [AdminComponent, LoginComponent,UsersComponent,DashboardComponent,AnalyticsComponent,CoursesComponent,JobsComponent,ServicesComponent,
-    VerificationComponent
+    VerificationComponent,AddServiceDialogComponent
   ],providers:[
     HttpClientModule
   ],
   exports: [
     AdminComponent, LoginComponent,UsersComponent,DashboardComponent,AnalyticsComponent,CoursesComponent,JobsComponent,ServicesComponent,
-    VerificationComponent
+    VerificationComponent,AddServiceDialogComponent
   ]
 
 })
