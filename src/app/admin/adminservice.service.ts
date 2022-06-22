@@ -20,9 +20,9 @@ export class AdminserviceService {
     })
   }
    token=localStorage.getItem('LoginToken');
-  https_requirements_with_token={
+  https_multipart={
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
+      'Content-Type': 'multipart/form-data',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': 'Content-Type',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
@@ -56,7 +56,7 @@ export class AdminserviceService {
   // users component
 
   getAllUsers(){
-    return this.http.get(this.url+'/api/admin/users/all',this.https_requirements_with_token);
+    return this.http.get(this.url+'/api/admin/users/all',this.https_requirements);
   }
   blockUsers(val:any):Observable<any>{
     return this.http.post<any>(this.url+'/api/admin/users/block',val,this.https_requirements);
@@ -87,6 +87,20 @@ export class AdminserviceService {
   deleteJob(val:any):Observable<any>{
     return this.http.post<any>(this.url+'/api/admin/jobs/delete',val,this.https_requirements);
   }
+// services
+getAllServices():Observable<any>{
+  return this.http.get<any>(this.url+'/api/admin/services/all',this.https_requirements);
+}
+createService(val:any):Observable<any>{
+  return this.http.post(this.url+'/api/admin/services/create',val,this.https_requirements);
+}
+uploadServiceLogo(val:any):Observable<any>{
+  return this.http.post(this.url+'/api/admin/services/upload_logo',val);
+}
+deleteServices(id:number):Observable<any>{
+  return this.http.post<any>(this.url+'/api/admin/services/delete/'+id,this.https_requirements);
+}
+
 
 
 }
