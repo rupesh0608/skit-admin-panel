@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class AdminserviceService {
 
 
-    // url:any="https://s-kit.herokuapp.com"
-  url: any = "http://localhost:8080"
+    url:any="https://s-kit.herokuapp.com"
+  // url: any = "http://localhost:8080"
   job_url: any = "https://govtjobsapi.herokuapp.com"
   https_requirements = {
     headers: new HttpHeaders({

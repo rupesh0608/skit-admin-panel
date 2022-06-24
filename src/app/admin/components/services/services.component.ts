@@ -149,6 +149,7 @@ export class ServicesComponent implements OnInit {
   serviceModuleList: any
   serviceList: any
   moduleId:number=0
+  addServiceBtn:Boolean=false
   openAddModuleDialog() {
     const dialogRef = this.dialog.open(AddServiceDialogComponent, {
       width: '250px',
@@ -182,6 +183,7 @@ export class ServicesComponent implements OnInit {
     
   }
   getAllServices() {
+    this.addServiceBtn=false
     this.service.getAllServices().subscribe((res: any) => {
       if (!res.error) {
         console.log("==> Services", res.data)
@@ -190,6 +192,7 @@ export class ServicesComponent implements OnInit {
     })
   }
   openServices(item:any) {
+    this.addServiceBtn=true
     this.moduleId=item.id
     console.log("ServiceList",item.services)
     this.serviceList =item.services
