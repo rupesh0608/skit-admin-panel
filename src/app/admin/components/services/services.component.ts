@@ -245,7 +245,7 @@ export class ServicesComponent implements OnInit {
     })
   }
   deleteService(id:any) {
-    this.service.deleteService(id).subscribe((res:any) => {
+    this.service.deleteService(this.moduleId,id).subscribe((res:any) => {
       if (!res.error) {
         this.serviceList=[]
         this.getAllServices()

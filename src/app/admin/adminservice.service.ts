@@ -100,8 +100,8 @@ export class AdminserviceService {
   deleteServiceModule(id: any): Observable<any> {
     return this.http.post(this.url + '/api/admin/services/delete_service_module/'+id,this.https_requirements);
   }
-  deleteService(id: any): Observable<any> {
-    return this.http.post(this.url + '/api/admin/services/delete_service/'+id,this.https_requirements);
+  deleteService(moduleId:any,serviceId: any): Observable<any> {
+    return this.http.post(this.url + '/api/admin/services/delete_service/'+moduleId+'/'+serviceId,this.https_requirements);
   }
   enableDisableServiceModule(id: any): Observable<any> {
     return this.http.post(this.url + '/api/admin/services/enable_disable_service_module/'+id,this.https_requirements);
