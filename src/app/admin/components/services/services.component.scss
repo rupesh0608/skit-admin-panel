@@ -1,4 +1,4 @@
-.service-box{
+.service-box {
     background-color: white;
 
     mat-slide-toggle {
@@ -6,34 +6,34 @@
         padding-top: 5px;
         padding-right: 5px;
     }
-    img{
-        width:100px;
+    img {
+        width: 100px;
         height: 100px;
-        margin:10px;
+        margin: 10px;
         border-radius: 50%;
     }
-    .service-name{
-        background-color:rgba(4,35,59,10%) ;
+    .service-name {
+        background-color: rgba(4, 35, 59, 10%);
         font-weight: 500;
         border-radius: 2px 2px 2px 2px;
-        .bottom-box-1-2{
-            background-color:rgba(4,35,59,30%);
+        .bottom-box-1-2 {
+            background-color: rgba(4, 35, 59, 30%);
             border-radius: 0px 0px 0px 2px;
             text-align: center;
             color: white;
             font-weight: 500;
             padding: 3px;
         }
-        .bottom-box-2-2{
-            background-color:rgba(4,35,59,30%);
+        .bottom-box-2-2 {
+            background-color: rgba(4, 35, 59, 30%);
             border-radius: 0px 0px 2px 0px;
             text-align: center;
             color: white;
             font-weight: 500;
             padding: 3px;
         }
-        .bottom-box-2-3{
-            background-color:rgba(240, 128, 128, .8);
+        .bottom-box-2-3 {
+            background-color: rgba(240, 128, 128, 0.8);
             border-radius: 0px 0px 2px 0px;
             text-align: center;
             color: white;
@@ -42,11 +42,23 @@
         }
     }
 }
-.btn-sucess{
-    background-color: #3DB099!important;
+.btn-sucess {
+    background-color: #3db099 !important;
     color: white;
 }
-.btn-cancel{
-    background-color: #E35151!important;
+.btn-cancel {
+    background-color: #e35151 !important;
     color: white;
+}
+.serviceModuleActive {
+    background-color: #ecf8f6;
+    border-color: #3db099!important;
+    border: 2px solid;
+    border-radius: 10px;
+}
+.serviceModuleDisabled {
+    background-color: #fbe9e9;
+    border-color: #e35151!important;
+    border: 2px solid;
+    border-radius: 10px;
 }

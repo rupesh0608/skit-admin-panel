@@ -21,21 +21,19 @@
       </div>
     </div>
     <div style="height:550px;overflow: auto;">
-      <div class="form-inline border m-2" *ngFor="let item of serviceModuleList"
-        style="background-color:#fff ;border-color: black;border-radius: 10px;">
+      <div [ngClass]="item.isActive?'serviceModuleActive form-inline  m-2':'serviceModuleDisabled form-inline m-2'" *ngFor="let item of serviceModuleList" >
         <div class="w-75 form-inline" (click)="openServices(item)">
           <img class="mx-2 mt-1 mb-1 border" src="{{item.image}}"
             style="border-radius: 10%;width:50px;height:50px;">
-          <h2 class="pt-4 text-center" style="font-size: 15px;font-weight: 400;">{{item.name}}</h2>
+          <h2 class="pt-4 text-center" style="font-size: 15px;font-weight: 400;"><b>{{item.name}}</b> {{item.services?.length>0?'('+item.services?.length+' Services Available)':''}}</h2>
         </div>
         <div class="w-25" style="float: right;">
-
           <button style="float: right;" mat-icon-button [matMenuTriggerFor]="fileMenu">
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #fileMenu="matMenu" style="align-items: center;">
-            <button mat-menu-item>
-              <mat-slide-toggle></mat-slide-toggle>
+            <button mat-menu-item (click)="enableDisableServiceModule(item.id)">
+              <mat-slide-toggle [(ngModel)]="item.isActive"></mat-slide-toggle>
               <span>  Enable/Disable</span>
             </button>
             <button mat-menu-item><mat-icon>edit</mat-icon><span>Edit</span></button>
@@ -67,8 +65,7 @@
       </div>
     </div>
     <div style="height:550px;overflow: auto;">
-      <div class="form-inline border m-2" *ngFor="let item of serviceList"
-        style="background-color:#fff ;border-color: black;border-radius: 10px;">
+      <div [ngClass]="item.isActive?'serviceModuleActive form-inline  m-2':'serviceModuleDisabled form-inline m-2'" *ngFor="let item of serviceList">
         <div class="w-75 form-inline">
           <img class="mx-2 mt-1 mb-1 border" src="{{item.image}}"
             style="border-radius: 10%;width:50px;height:50px;">
@@ -80,10 +77,9 @@
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #fileMenu="matMenu" style="align-items: center;">
-            <button mat-menu-item>
-              <mat-slide-toggle></mat-slide-toggle>
+            <button mat-menu-item (click)="enableDisableService(item.id)">
+              <mat-slide-toggle [(ngModel)]="item.isActive"></mat-slide-toggle>
               <span>  Enable/Disable</span>
-              
             </button>
             <button mat-menu-item><mat-icon>edit</mat-icon><span>Edit</span></button>
             <button mat-menu-item (click)="deleteService(item.id)"><mat-icon>delete</mat-icon><span>Delete</span></button>

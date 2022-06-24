@@ -264,6 +264,52 @@ export class ServicesComponent implements OnInit {
       }
     })
   }
+  enableDisableService(id:any) {
+    this.service.enableDisableService(id).subscribe((res:any) => {
+      if (!res.error) {
+        this.serviceList=[]
+        this.getAllServices()
+        Swal.fire({
+          icon: 'success',
+          text: res.message,
+          confirmButtonText: 'ok',
+          allowOutsideClick: false,
+          allowEscapeKey: false
+        })
+      } else {
+        Swal.fire({
+          icon: 'error',
+          text: res.message,
+          confirmButtonText: 'ok',
+          allowOutsideClick: false,
+          allowEscapeKey: false
+        })
+      }
+    })
+  }
+  enableDisableServiceModule(id:any) {
+    this.service.enableDisableServiceModule(id).subscribe((res:any) => {
+      if (!res.error) {
+        this.serviceList=[]
+        this.getAllServices()
+        Swal.fire({
+          icon: 'success',
+          text: res.message,
+          confirmButtonText: 'ok',
+          allowOutsideClick: false,
+          allowEscapeKey: false
+        })
+      } else {
+        Swal.fire({
+          icon: 'error',
+          text: res.message,
+          confirmButtonText: 'ok',
+          allowOutsideClick: false,
+          allowEscapeKey: false
+        })
+      }
+    })
+  }
      
 
 }
