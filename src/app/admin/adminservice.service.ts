@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class AdminserviceService {
 
 
-    url:any="https://s-kit.herokuapp.com"
-  // url: any = "http://localhost:8080"
+    // url:any="https://s-kit.herokuapp.com"
+  url: any = "http://localhost:8080"
   job_url: any = "https://govtjobsapi.herokuapp.com"
   https_requirements = {
     headers: new HttpHeaders({
@@ -96,6 +96,12 @@ export class AdminserviceService {
   }
   createServiceModule(val: any): Observable<any> {
     return this.http.post(this.url + '/api/admin/services/create_service_module', val);
+  }
+  deleteServiceModule(id: any): Observable<any> {
+    return this.http.post(this.url + '/api/admin/services/delete_service_module/'+id,this.https_requirements);
+  }
+  deleteService(id: any): Observable<any> {
+    return this.http.post(this.url + '/api/admin/services/delete_service/'+id,this.https_requirements);
   }
 
 

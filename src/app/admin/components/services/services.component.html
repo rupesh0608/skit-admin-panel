@@ -39,7 +39,7 @@
               <span>  Enable/Disable</span>
             </button>
             <button mat-menu-item><mat-icon>edit</mat-icon><span>Edit</span></button>
-            <button mat-menu-item><mat-icon>delete</mat-icon><span>Delete</span></button>
+            <button mat-menu-item (click)="deleteServiceModule(item.id)"><mat-icon>delete</mat-icon><span>Delete</span></button>
           </mat-menu>
         </div>
 
@@ -86,7 +86,7 @@
               
             </button>
             <button mat-menu-item><mat-icon>edit</mat-icon><span>Edit</span></button>
-            <button mat-menu-item><mat-icon>delete</mat-icon><span>Delete</span></button>
+            <button mat-menu-item (click)="deleteService(item.id)"><mat-icon>delete</mat-icon><span>Delete</span></button>
           </mat-menu>
         </div>
 

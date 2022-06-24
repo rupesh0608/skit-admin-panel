@@ -219,6 +219,51 @@ export class ServicesComponent implements OnInit {
       }
     })
   }
+  deleteServiceModule(id:any) {
+    this.service.deleteServiceModule(id).subscribe((res:any) => {
+      if (!res.error) {
+        this.getAllServices()
+        Swal.fire({
+          icon: 'success',
+          text: res.message,
+          confirmButtonText: 'ok',
+          allowOutsideClick: false,
+          allowEscapeKey: false
+        })
+      } else {
+        Swal.fire({
+          icon: 'error',
+          text: res.message,
+          confirmButtonText: 'ok',
+          allowOutsideClick: false,
+          allowEscapeKey: false
+        })
+      }
+    })
+  }
+  deleteService(id:any) {
+    this.service.deleteService(id).subscribe((res:any) => {
+      if (!res.error) {
+        this.serviceList=[]
+        this.getAllServices()
+        Swal.fire({
+          icon: 'success',
+          text: res.message,
+          confirmButtonText: 'ok',
+          allowOutsideClick: false,
+          allowEscapeKey: false
+        })
+      } else {
+        Swal.fire({
+          icon: 'error',
+          text: res.message,
+          confirmButtonText: 'ok',
+          allowOutsideClick: false,
+          allowEscapeKey: false
+        })
+      }
+    })
+  }
      
 
 }
